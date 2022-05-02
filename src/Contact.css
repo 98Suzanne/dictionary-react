@@ -1,0 +1,15 @@
+.github {
+  padding-top: 10px;
+}
+.github,
+#contact {
+  display: block;
+  margin: 0 auto;
+  font-size: 11px;
+  text-align: center;
+  text-decoration: none;
+  width: 120px;
+}
+.linkedin {
+  text-decoration: none;
+}
