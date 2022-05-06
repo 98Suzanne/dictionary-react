@@ -1,0 +1,39 @@
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+section {
+  background: #ffffff;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 5px;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  color: #505050;
+  width: 100%;
+  padding: 7px 10px;
+  border: 2px solid #7aa86d;
+  border-radius: 5px;
+}
+input:focus {
+  outline-color: #7aa86d;
+}
+
+.WordSuggestions {
+  font-size: 12px;
+  color: #aaaab1;
+  margin-top: 5px;
+}
+
+.SearchButton {
+  color: #ffffff;
+  background-color: #7aa86d;
+  border: 2px solid #55754c;
+}
+.SearchButton:hover {
+  color: #ffffff;
+  background: #55754c;
+}
