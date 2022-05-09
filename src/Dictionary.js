@@ -3,16 +3,16 @@ import axios from "axios";
 import Results from "./Results";
 import "./Dictionary.css";
 
-export default function Dictionary() {
-  let [keyword, setKeyword] = useState("");
+export default function Dictionary(props) {
+  let [keyword, setKeyword] = useState(props.defaultKeyword);
   let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
 
   function handleResponse(response) {
     setResults(response.data[0]);
   }
 
-  function search(event) {
-    event.preventDefault();
+  function search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -21,33 +21,43 @@ export default function Dictionary() {
     setKeyword(event.target.value);
   }
 
-  return (
-    <div className="Dictionary">
-      <section>
-        <h1>What word do you want to look up?</h1>
-        <form onSubmit={search}>
-          <div className="row">
-            <div className="col-9">
-              <input
-                type="search"
-                placeholder="Search word..."
-                onChange={handleKeywordChange}
-              />
+  function load() {
+    setLoaded(true);
+    search();
+  }
+
+  if (loaded) {
+    return (
+      <div className="Dictionary">
+        <section>
+          <h1>What word do you want to look up?</h1>
+          <form onSubmit={search}>
+            <div className="row">
+              <div className="col-9">
+                <input
+                  type="search"
+                  placeholder="Search word..."
+                  onChange={handleKeywordChange}
+                />
+              </div>
+              <div className="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  className="btn SearchButton"
+                />
+              </div>
             </div>
-            <div className="col-3">
-              <input
-                type="submit"
-                value="Search"
-                className="btn SearchButton"
-              />
-            </div>
+          </form>
+          <div className="WordSuggestions">
+            Suggested words: tea, vine, fish...
           </div>
-        </form>
-        <div className="WordSuggestions">
-          Suggested words: forest, cat, advertisement...
-        </div>
-        <Results results={results} />
-      </section>
-    </div>
-  );
+          <Results results={results} />
+        </section>
+      </div>
+    );
+  } else {
+    load();
+    return "Loading...";
+  }
 }
