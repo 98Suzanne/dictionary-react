@@ -1,0 +1,21 @@
+.Phonetic {
+  margin-bottom: 10px;
+}
+
+.PhoneticButton {
+  background: #55754c;
+  border-radius: 20px;
+  color: #b1dfa4;
+  transition: all 150ms ease-in-out;
+}
+.PhoneticButton:hover {
+  color: #55754c;
+  background: #b1dfa4;
+}
+
+.Phonetic .phonetic-text {
+  display: inline-block;
+  font-size: 20px;
+  margin: 2px 0 2px 20px;
+  color: #55754c;
+}

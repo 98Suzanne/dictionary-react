@@ -1,12 +1,11 @@
 .App {
-  max-width: 900px;
-  margin: 0 auto;
   font-family: "Vollkorn", serif;
   font-size: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 25px;
 }
 
 body {
-  background-color: #f4f4fc;
-  background-repeat: round;
-  background-size: contain;
+  background-color: #f6fcf4;
 }

@@ -13,7 +13,7 @@ export default function Meaning(props) {
               <br />
               <em>{definition.example}</em>
             </p>
-            <Synonyms synonyms={props.meaning.synonyms} />
+            <Synonyms synonyms={definition.synonyms} />
           </div>
         );
       })}

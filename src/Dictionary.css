@@ -3,6 +3,11 @@ h1 {
   margin-bottom: 20px;
 }
 
+h2 {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
 section {
   background: #ffffff;
   padding: 20px;
@@ -15,11 +20,11 @@ input {
   color: #505050;
   width: 100%;
   padding: 7px 10px;
-  border: 2px solid #7aa86d;
+  border: 2px solid #55754c;
   border-radius: 5px;
 }
 input:focus {
-  outline-color: #7aa86d;
+  outline-color: #55754c;
 }
 
 .WordSuggestions {
@@ -29,11 +34,14 @@ input:focus {
 }
 
 .SearchButton {
-  color: #ffffff;
-  background-color: #7aa86d;
+  color: #b1dfa4;
+  background-color: #55754c;
   border: 2px solid #55754c;
+  transition: all 150ms ease-in-out;
+  font-weight: bold;
 }
 .SearchButton:hover {
-  color: #ffffff;
-  background: #55754c;
+  color: #55754c;
+  background: #b1dfa4;
+  border: 2px solid #b1dfa4;
 }
